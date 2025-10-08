@@ -13,28 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Welcome.md",
+                "file": "Untitled/C#/Lecture 8.10.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Welcome"
-            }
-          }
-        ]
-      },
-      {
-        "id": "da08d77864463f90",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "921395d052260cba",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "title": "Lecture 8.10"
             }
           }
         ]
@@ -91,10 +75,26 @@
             }
           }
         ]
+      },
+      {
+        "id": "a3d3cdce97225451",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1c2e8eabb6baf227",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "bcbeac06d2f2b96b",
@@ -158,24 +158,25 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Welcome.md",
+                "file": "Untitled/C#/Lecture 8.10.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Welcome"
+              "title": "Outline of Lecture 8.10"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -187,6 +188,10 @@
   },
   "active": "4d39e37658630e57",
   "lastOpenFiles": [
-    "Welcome.md"
+    "Untitled.md",
+    "Untitled/C#/Lecture 8.10.md",
+    "Untitled/C#",
+    "Welcome.md",
+    "Untitled"
   ]
 }
