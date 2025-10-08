@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled/C#/Lecture 8.10.md",
+                "file": "C#/Lecture 8.10.md",
                 "mode": "source",
                 "source": false
               },
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled/C#/Lecture 8.10.md",
+                "file": "C#/Lecture 8.10.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -186,11 +186,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "4d39e37658630e57",
+  "active": "634ad804694dfcc9",
   "lastOpenFiles": [
     "Untitled.md",
-    "Untitled/C#/Lecture 8.10.md",
-    "Untitled/C#",
+    "C#/Lecture 8.10.md",
+    "C#",
     "Welcome.md",
     "Untitled"
   ]
