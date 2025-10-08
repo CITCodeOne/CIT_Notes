@@ -1,3 +1,6 @@
+```table-of-contents
+```
+
 ### Delegates and Events
 
 **Delegates**: A delegate is a type that safely encapsulates a method, acting as an object that knows how to call it. It defines a method's signature (return type and parameters). You can create an instance of a delegate and assign a compatible method to it. Invoking the delegate instance then calls the assigned method. This decouples the caller from the target method, enabling plug-in architectures and higher-order functions.

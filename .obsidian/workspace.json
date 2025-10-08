@@ -33,6 +33,7 @@
       {
         "id": "8812fc6620ae6e7d",
         "type": "tabs",
+        "dimension": 71.63355408388522,
         "children": [
           {
             "id": "634ad804694dfcc9",
@@ -79,6 +80,7 @@
       {
         "id": "a3d3cdce97225451",
         "type": "tabs",
+        "dimension": 28.36644591611479,
         "children": [
           {
             "id": "1c2e8eabb6baf227",
@@ -172,7 +174,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -186,7 +189,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "1c2e8eabb6baf227",
+  "active": "4d39e37658630e57",
   "lastOpenFiles": [
     "Untitled.md",
     "C#/Lecture 8.10.md",
