@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C#/Methods.md",
+                "file": "Portfolio/Backend notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Methods"
+              "title": "Backend notes"
             }
           }
         ],
@@ -175,13 +175,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "C#/Methods.md",
+                "file": "Portfolio/Backend notes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Methods"
+              "title": "Outline of Backend notes"
             }
           }
         ],
@@ -206,8 +206,10 @@
   },
   "active": "06ea1f3f01981fd7",
   "lastOpenFiles": [
-    "SQL/Introduction.md",
     "C#/Methods.md",
+    "Portfolio/Backend notes.md",
+    "Portfolio",
+    "SQL/Introduction.md",
     "C#/Conditional statements.md",
     "C#/Lecture 8.10.md",
     "C#",

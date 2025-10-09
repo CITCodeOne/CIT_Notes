@@ -1,3 +1,22 @@
+## Quick summary
+
+1. Method is used to define named blocks of custom code that can easily be reused.
+2. Methods can be called by adding parentheses to the end of the method name.
+3. Every time an application is started, the Main() method is called.
+4. Methods can return values as output. Method outputs can be stored in variables for later use.
+5. A basic method can be defined using following syntax `static void BasicMethod()`
+6. *Arguments* are values passed to method call, between the parentheses.
+7. *Parameters* in a method signature define variables that will serve as placeholders for arguments passed when the method is called.
+8. Method parameters can only be used within the method body.
+9. In *method overloading* multiple methods can have the same name, as long as they have different method signatures.
+10. Method parameters can be optional given a default using equals syntax.
+11. When calling a method arguments can be passed by position by name. If using names, use the colon syntax.
+12. Methods return values with the `return` keyword.
+13. We can define a type and value for a method to return.
+14. Every method has a return type designated in its method signature. That type must match the type of the value actually returned.
+15. If a method returns no type, its return type is `void`
+16. `out` parameters can be used to return multiple values from a method.
+
 ## Introduction
 A method is a reusable set of instructions that performs a specific task. It is used to keep code organized, maintainable, and repeatable. Sometimes methods is also refered to functions. 
 
@@ -162,3 +181,152 @@ Overloading is useful when we want the same method to have different behavior ba
 
 This can be used to other methods as well, as long as it has different sets of parameters.
 
+## Out Parameters
+Sometimes we need to output multiple pieces of information. Calling a method that uses an `out` parameter is one way to return multiple values. 
+
+e.g. `Int32.TryParse()` method tries to parse its input as an int. If it can properly parse the input, the method returns `true` and sets its `out` variable to the new value. If it can't, the method returns `false`and sets the out variable to `0`. 
+
+e.g.
+```C#
+public static bool TryParse (string s, out int result);
+```
+
+The method returns a bool and accepts a `string` and a variable that has been declared of type `int` as input.
+
+We can also use the `out` parameters in our own methods. Any `out` parameter must be assigned a value within the method body. The last value assigned in the method will be available to the methods caller. 
+
+In this e.g. we define `area` and `perimeter` `out` parameters and use their values in `Main()`: 
+```C#
+static void CalculateRectangle(int length, int width, out int area, out int perimeter)
+{
+    area = length * width;
+    perimeter = 2 * (length + width);
+}
+
+static void Main()
+{
+    int length = 5;
+    int width = 3; 
+    CalculateRectangle(length, width, out int area, out int perimeter);
+    Console.WriteLine($"Area: {area}"); // Prints "Area: 15"
+    Console.WriteLine($"Perimeter: {perimeter}"); // Prints "Perimeter: 16"
+}
+```
+
+## Optional Parameters
+To make functions even more flexible we can make certain parameters *optional*. If someone calls our method without all the parameters, the method will assign a default value to those missing parameters.
+
+We use the equals sign `(=)` when defining an optional method parameter. In this example `punctuation` is optional, and its default value is `"."` 
+
+e.g.
+```C#
+static void OurMethodName(string message, string punctuation = ".")
+{
+  Console.WriteLine(message + punctuation);
+}
+
+static void Main(string[] args)
+{
+  OurMethodName("I'm hungry", "!"); // prints "I'm hungry!"
+  OurMethodName("I'm hungry");  // prints "I'm hungry."
+}
+```
+
+Reusing the code with planets, we can see how we added a default and made a new parameter in `VisitPlanets` that equals to `0`.
+
+```C#
+using System;
+
+namespace OptionalParameters
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      VisitPlanets(3);
+      VisitPlanets(4);
+      VisitPlanets(5);
+      VisitPlanets();
+    }
+    
+    static void VisitPlanets(int numberOfPlanets = 0)
+    {
+      Console.WriteLine($"You visited {numberOfPlanets} new planets...");
+    }
+  }
+}
+```
+
+## Named Arguments 
+Say our method has lots of optional parameters, but we only want to specify one when we call it. 
+
+In this e.g., our method has five optional parameters:
+```C#
+static void OurMethodName(int a = 0, int b = 0, int c = 0, int d = 0, int e = 0) 
+{
+  Console.WriteLine($"{a}{b}{c}{d}{e}");
+}
+```
+
+We call this method, but we only want to specify `d`. By default, calling the method with only one argument would set `a` to `4`, not `d` since `a` is the first parameter defined by the method definition. This is called **positional arguments**, as they correspond to the order that the parameters are defined in:
+
+```C#
+OurMethodName(4);
+// Prints "40000"
+```
+
+**Named arguments** allow us to specify which parameter a given argument should be assigned to.  We can refer to the parameter by its name using the following syntax:
+
+```C#
+OurMethodName(d: 4);
+// Prints "00040"
+```
+
+Named arguments can also be listed in any order
+
+```C#
+OurMethodName(d: 4, b: 1, a: 2);
+// Prints "21040"
+```
+
+Or mix it around, **but positional arguments must come before named arguments**:
+```C#
+OurMethodName(5, 3, d: 2) 
+// a is 5, b is 3, d is 2; Prints "53020"
+
+OurMethodName(d: 4, 2, 1) // Error!
+```
+
+This is useful when
+
+1. A method has many optional parameters
+2. We want to differentiate between similar arguments
+
+A code e.g. using the former planet code
+```C#
+using System;
+
+namespace NamedArguments
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      VisitPlanets();
+      VisitPlanets(numberOfPlanets: 2);
+      VisitPlanets(numberOfPlanets: 2, name: "Elisabeth");
+    }
+    
+    static void VisitPlanets(
+      string adjective = "brave",
+      string name = "Cosmonaut", 
+      int numberOfPlanets = 0,
+      double gForce = 4.2)
+    {
+      Console.WriteLine($"Welcome back, {adjective} {name}.");
+      Console.WriteLine($"You visited {numberOfPlanets} new planets...");
+      Console.WriteLine($"...while experiencing a g-force of {gForce} g!");
+    }
+  }
+}
+```
