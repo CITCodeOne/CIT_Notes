@@ -3,17 +3,6 @@ We need to add a REST Web Service Layer, keep things maintainable/testable/exten
 
 *Skal vi bare lave user stories alle sammen, så vi har dem?*
 
-```table-of-contents
-title: 
-style: nestedList # TOC style (nestedList|nestedOrderedList|inlineFirstLevel)
-minLevel: 0 # Include headings from the specified level
-maxLevel: 0 # Include headings up to the specified level
-include: 
-exclude: 
-includeLinks: true # Make headings clickable
-hideWhenEmpty: false # Hide TOC if no headings are found
-debugInConsole: false # Print debug info in Obsidian console
-```
 ## Architecture ideas
 
 1. Database
