@@ -8,7 +8,42 @@ There is highlights about the challenges of the 'object-relational impedance mis
 - Practical coding examples for database operations.
 - Introduction to the second assigments using abstractions like ORM and ASP.NET
 
-## 1. Object-Relational Impedance Mismatch
+## 1. Setup example from class
+##### Project Setup with EF Core
+
+1. Create a New Project
+	1. Project Type: New Console Application
+	2. Name: PDF example
+	3. Goal: Demonstrate interaction with a database using EF Core.
+2. Configuring Entity Framework 
+	1. Install NuGet Package:
+		1. Go to NuGet Package Manager
+		2. Search for NPG SQL Entity Framework (specifically `Npgsql.EntityFrameworkCore.PostgreSQL`).
+		3. Install it. This package depends on the lower-level NPG SQL ADO package.
+3. Model Creation
+	1. Create a simple C# class e.g. `Category`, with properties like `Id, Name, Description` 
+	2. This class is database-agnostic initially
+4. Create DbContext
+	1. Create a class e.g., `NorthwindContext`, that inherits from `DbContext`.
+	2. `DbContext` is part of the EF Core framework.
+	3. Add `DbSet<Category>` property (e.g. `Categories`) to this context to represent the table/Collection
+
+##### Initial Query Attempt & Configuration Issues
+1. Attempted Query: `db.Categories` (using an instance of NorthwindContext).
+2. Error 1: No Data Provider Configured.
+	1. No data provider has been configured for the TP context
+	2. **Problem**: EF doesn't know which database provider (e.g. PostgreSQL, SQL Server) to use. 
+	3. **Solution**: Override the `OnConfiguring` method in NorthwindContext.
+		1. Use `optionBuilder.UseNpgsq1("Connection String")`
+		2. `UseNpgsql` is an extension of method provided by the `Npgsql.EntityFrameworkCore.PostgreSQL` package.
+		3. **Connection String**: Specificies server (e.g., `Host=localhost`), database (`Database=northwind`), user (`Username=postgres), and password.
+3. Error 2: Relation does Not Exist:
+	1. `relation categories do not exist` 
+	2. **Problem**: PostgreSQL is casesensitive by default when identifiers are doubled-quoted. EF might infer "Categories" (PascalCase from C# class) while PostgreSQL expects "categories" (lowercase).
+	3. **Solution**: Override `OnModelCreating` in `NorthwindContext`
+		1. Use `modelBuilder.Entity<Category>().Totable("categories");` to explicitly map the entity to the correct table name.
+
+## 2. Object-Relational Impedance Mismatch
 
 The fundamental differences between the object-oriented (OO) programming paradigm and relational database model. 
 
@@ -24,7 +59,7 @@ The fundamental differences between the object-oriented (OO) programming paradig
 |                |                                                                                                                  | Has built-in constraints (e.g. foreign key constraints) that are not native to OO languages. |                                                           |
 
 
-## 2. Database Inheritance Strategies.
+## 3. Database Inheritance Strategies.
 There are three main ways to represent class inheritance hierarchies in a relational database, which all have pros and cons.
 
 1. One Table for the Full Hierarchy
@@ -87,7 +122,7 @@ There are three main ways to represent class inheritance hierarchies in a relati
 	- **Querying Base Type**: Querying all "users" (if `User` was abstract) would require and uniting results from all concrete subclass tables (e.g. `Teacher`, `Student`).
 
 
-## 3. Object-Relational Mapping (ORM) Tools
+## 4. Object-Relational Mapping (ORM) Tools
 The purpose with ORm is to bridge the impedance mismatch by abstracting database interactions and allowing developers to work with objects.
 
 **Benefits**
@@ -108,7 +143,7 @@ The purpose with ORm is to bridge the impedance mismatch by abstracting database
 1. Domain Classes with Built-in Database Knowledge: Object classes contain metadata or code related to their database mapping. (e.g. annotations/attributes).
 2. Separate Mapping Layer: Domain classes are pure object-oriented, with no database knowledge. A separate mapping layer (configuration) defines how objects map to database tables and columns. This promotes separation of concerns. *This is preferred by Entity Framework Core*.
 
-## 4. ADO.NET (ActiveX Data Objects .NET)
+## 5. ADO.NET (ActiveX Data Objects .NET)
 
 The low-level framework in C# for connecting and interacting with databases. Analogous to JDBC in java.
 
@@ -133,7 +168,7 @@ ExecuteScalar(): /* For queries that return a single value */
 2. Boilerplate Code: Requires manual writing of SQL, connection handling and data mapping. 
 3. Not Object-Oriented: Directly manipulates tabular data.
 
-## 5. Entity Framework
+## 6. Entity Framework
 
 A popular Object-Relational Mapper (ORM) framework for .NET applications.
 
@@ -141,5 +176,3 @@ A popular Object-Relational Mapper (ORM) framework for .NET applications.
 1. Original EF: Developed for Windows platform, grew into a "monster" with many features becoming slower. 
 2. EF Core: Rewritten from scratch for .NET Core (cross-platform). Focused on performance and a more steamlined architecture. Many older features were dropped for speed.
 3. Current: Now simply called "Entity Framework" (referring to EF Core).
-
-
