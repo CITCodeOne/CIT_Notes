@@ -3,6 +3,11 @@ We need to add a REST Web Service Layer, keep things maintainable/testable/exten
 
 *Skal vi bare lave user stories alle sammen, så vi har dem?*
 
+Additions: 
+
+Maybe do TDD? 
+- Agree on what the functions names are, what they need to do, someone makes tests that makes them work and then refactors them.
+
 ## Architecture ideas
 
 1. Database
