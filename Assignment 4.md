@@ -65,3 +65,4 @@ Mapping to lowercase table/column names avoids many "column does not exist" erro
 
 1. Mappings let EF know what tables and columns to use
 2. Relationships tell EF how those tables connect.
+
