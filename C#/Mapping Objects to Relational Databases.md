@@ -1,0 +1,2 @@
+This document provides a detailed overview of techniques and challenges invovled in mapping object-oriented (OO) models to relational databases (RDB) schemas. This process, known as Object-Relational (O/R) mapping, is necessary because of the fundamental differences—the "impedance mismatch"—between the object and relational paradigms. While objects encapsulate both data and behavior, relational tables only store data.
+
