@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Portfolio/Group meeting 21.10.md",
+                "file": "Portfolio/Meeting with Henrik 22.10.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Group meeting 21.10"
+              "title": "Meeting with Henrik 22.10"
             }
           }
         ],
@@ -206,8 +206,9 @@
   },
   "active": "07d5c05edd50c9ca",
   "lastOpenFiles": [
-    "Portfolio/Exam & Portfolio notes.md",
     "Portfolio/Group meeting 21.10.md",
+    "Portfolio/Meeting with Henrik 22.10.md",
+    "Portfolio/Exam & Portfolio notes.md",
     "Portfolio/Backend notes.md",
     "C#/Mapping Objects to Relational Databases.md",
     "C#/Lectures/Lecture 17.10 part 1.md",
