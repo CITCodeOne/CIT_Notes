@@ -226,15 +226,15 @@ const result =
 This approach is central to modern JavaScript and React development.
 
 | <center>Method</center> | <center>Purpose</center> |
-| ----------------------- | ------------------------ |
-| `every(f)`              | all match?               |
-| `some(f)`               | at least one match?      |
-| `find(f)`               | first matching element   |
-| `filter(f)`             | all matching elements    |
-| `map(f)`                | transform each element   |
-| `reduce(g, init)`       | combine all elements     |
-| `slice(i, j)`           | copy subarry             |
-| `toSorted()`            | sorted copy              |
+|:-----------------------:|:------------------------:|
+|       `every(f)`        |        all match?        |
+|        `some(f)`        |   at least one match?    |
+|        `find(f)`        |  first matching element  |
+|       `filter(f)`       |  all matching elements   |
+|        `map(f)`         |  transform each element  |
+|    `reduce(g, init)`    |   combine all elements   |
+|      `slice(i, j)`      |       copy subarry       |
+|      `toSorted()`       |       sorted copy        |
 
 
 ## Import and Export
